@@ -37,14 +37,13 @@ FetchContent_Declare(
   GIT_REPOSITORY https://github.com/lemire/fast_double_parser.git
   GIT_TAG efec03532ef65984786e5e32dbc81f6e6a55a115
 )
-FetchContent_MakeAvailable(fast_double_parser)
-include_directories(${fast_double_parser_SOURCE_DIR}/include)
 FetchContent_Declare(
   fmt
   GIT_REPOSITORY https://github.com/fmtlib/fmt.git
   GIT_TAG f5e54359df4c26b6230fc61d38aa294581393084
 )
-FetchContent_MakeAvailable(fmt)
+FetchContent_MakeAvailable(fast_double_parser fmt)
+include_directories(${fast_double_parser_SOURCE_DIR}/include)
 include_directories(${fmt_SOURCE_DIR}/include/fmt)
 
 if(BUILD_CPP_TEST)
